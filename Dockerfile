@@ -32,4 +32,4 @@ COPY . /app
 RUN rails assets:precompile RAILS_ENV=assets
 
 EXPOSE ${PORT}
-ENTRYPOINT ["bundle", "exec", "rackup", "--server", "thin", "--host", "0.0.0.0", "--port", "${PORT}"]
+#ENTRYPOINT ["bundle", "exec", "rackup", "--server", "thin", "--host", "0.0.0.0", "--port", "${PORT}"]
