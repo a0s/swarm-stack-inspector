@@ -8,9 +8,10 @@ class InterfaceController < ApplicationController
 
     @volumes = []
     Service.new(ENV['SELF_SERVICE_NAME']).nodes.each do |node|
-      response = Faraday.get("http://#{node.name}:#{ENV['PORT']}/volumes")
+      url = "http://#{node.name}:#{ENV['PORT']}/volumes"
+      puts "request to --- #{url}"
+      response = Faraday.get(url)
       volumes = JSON.parse(response).map { |h| Volume.new(h['name']) }
-
       volumes.each do |volume|
         @volumes << [node.name, volume.name]
       end
