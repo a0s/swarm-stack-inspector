@@ -1,0 +1,23 @@
+h2 Stacks
+table
+  tbody
+    - @stacks.each do |stack|
+      tr
+        td = stack.name
+        td
+
+h2 Services
+table
+  tbody
+    - @services.each do |service|
+      tr
+        td = service.name
+        td
+
+h2 Volumes
+table
+  tbody
+    - @volumes.each do |volume|
+      tr
+        td = volume.name
+        td

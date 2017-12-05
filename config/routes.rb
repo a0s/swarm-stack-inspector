@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root to: 'stacks#index'
+  root to: 'interface#index'
 end
