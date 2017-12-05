@@ -7,6 +7,7 @@ class InterfaceController < ApplicationController
     @other_nodes = Service.new(ENV['SELF_SERVICE_NAME']).nodes.reject { |n| n.name == self_node.name }
 
     @volumes = []
+    # FUUUUUUUU
     # nodes = Service.new(ENV['SELF_SERVICE_NAME']).nodes
     nodes = Service.new(ENV['SELF_SERVICE_NAME']).nodes.reject { |n| n.name == self_node.name }
     nodes.each do |node|
@@ -17,6 +18,9 @@ class InterfaceController < ApplicationController
       volumes.each do |volume|
         @volumes << [node.name, volume.name]
       end
+    end
+    Volume.all.each do |volume|
+      @volumes << [self_node.name, volume.name]
     end
   end
 end
