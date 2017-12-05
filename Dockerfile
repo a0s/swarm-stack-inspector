@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y curl \
     && mkdir -p /app \
     && mkdir -p /app/tmp/pids
 
-RUN wget https://download.docker.com/linux/static/edge/x86_64/docker-17.11.0-ce.tgz \
+RUN wget -nv https://download.docker.com/linux/static/edge/x86_64/docker-17.11.0-ce.tgz \
     && tar xzvf docker-17.11.0-ce.tgz \
     && cp docker/* /usr/bin/
 
