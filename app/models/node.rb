@@ -7,7 +7,7 @@ class Node
 
   def self.myself
     raw = `docker info`
-    name = raw.split("\n").map(&:strip).map{|s| s.match(/\AName:\s(.*)/) ? $1 : nil}.compact[0]
-    new(name)
+    list = raw.split("\n").map(&:strip).select(&:present?).compact
+    new(list.map { |s| s.match(/\AName:\s(.*)/) ? $1 : nil }.compact[0])
   end
 end

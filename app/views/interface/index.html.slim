@@ -4,7 +4,6 @@ table
     - @stacks.each do |stack|
       tr
         td = stack.name
-        td
 
 h2 Services
 table
@@ -12,15 +11,14 @@ table
     - @services.each do |service|
       tr
         td = service.name
-        td
 
 h2 Volumes
 table
   tbody
-    - @volumes.each do |volume|
+    - @volumes.each do |node, volume|
       tr
-        td = volume.name
-        td
+        td = node
+        td = volume
 
 h2 Other nodes
 table
@@ -28,4 +26,3 @@ table
     - @other_nodes.each do |other_node|
       tr
         td = other_node.name
-        td
