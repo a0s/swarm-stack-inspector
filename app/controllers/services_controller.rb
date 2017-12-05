@@ -1,6 +1,5 @@
 class ServicesController < ActionController::API
   def index
-    @services = Service.all
-    render json: @services
+    render json: Service.all
   end
 end

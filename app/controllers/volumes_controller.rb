@@ -1,6 +1,5 @@
 class VolumesController < ActionController::API
   def index
-    @volumes = Volume.all
-    render json: @volumes
+    render json: Volume.all
   end
 end

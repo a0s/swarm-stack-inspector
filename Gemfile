@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails'
-gem 'active_model_serializers'
 gem 'slim-rails'
 gem 'sass-rails'
 gem 'uglifier'

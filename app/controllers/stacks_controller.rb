@@ -1,6 +1,5 @@
 class StacksController < ActionController::API
   def index
-    @stacks = Stack.all
-    render json: @stacks
+    render json: Stack.all
   end
 end
