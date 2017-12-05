@@ -7,7 +7,7 @@ class Stack
 
   def self.all
     raw = `docker stack ls --format "{{.Name}}"`
-    names = raw.split("\n").select(&:present?).compact
+    names = raw.split("\n").map(&:strip).select(&:present?).compact
     names.map { |name| new(name) }
   end
 end

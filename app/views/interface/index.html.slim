@@ -21,3 +21,11 @@ table
       tr
         td = volume.name
         td
+
+h2 Other nodes
+table
+  tbody
+    - @other_nodes.each do |other_node|
+      tr
+        td = other_node.name
+        td
